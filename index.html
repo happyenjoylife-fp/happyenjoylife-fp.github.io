@@ -10,27 +10,20 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true') no-repeat center center fixed;
-            background-size: 30%;
-            background-color: rgba(255, 255, 255, 0.8); /* 背景にうっすら白を重ねて読みやすく */
-            background-blend-mode: lighten; /* 背景画像と白背景をなじませる */
+            background-color: #f4f4f4;
         }
-
         header {
             background-color: #333;
             color: white;
             padding: 10px 0;
             text-align: center;
         }
-
         section {
             padding: 20px;
         }
-
         h2 {
             color: #333;
         }
-
         footer {
             text-align: center;
             padding: 10px;
@@ -89,13 +82,12 @@
             display: inline-block;
             margin: 10px 20px;
         }
+
     </style>
 </head>
 <body>
 
-    <!-- ヘッダー画像は削除しました -->
-
-    <!-- タブを追加 -->
+    <!-- タブをページ最上部に移動 -->
     <ul class="nav nav-tabs">
         <li class="nav-item">
             <a class="nav-link active" data-bs-toggle="tab" href="#home">ホーム</a>
@@ -113,6 +105,11 @@
             <a class="nav-link" data-bs-toggle="tab" href="#contact">お問い合わせ</a>
         </li>
     </ul>
+
+    <!-- ヘッダー（ロゴ画像） -->
+    <header>
+        <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true" alt="ヘッダー画像" style="width: 30%; height: auto;">
+    </header>
 
     <!-- タブの内容 -->
     <div class="tab-content">
