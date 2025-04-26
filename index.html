@@ -9,10 +9,10 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding-top: 120px; /* タブ分の余白を確保 */
             background-color: #f4f4f4;
         }
-        /* タブ全体を固定 */
+        /* タブ全体 */
         .nav-tabs-wrapper {
             position: fixed;
             top: 0;
@@ -21,9 +21,9 @@
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        /* タブスタイル */
         .nav-tabs {
             display: flex;
+            flex-wrap: wrap;
             justify-content: flex-start;
             margin-bottom: 0;
             align-items: flex-end;
@@ -33,18 +33,18 @@
             margin-right: 20px;
         }
         .nav-tabs .nav-item:first-child img {
-            height: 100px;
+            height: 80px;
             width: auto;
         }
         .nav-link {
             color: gray !important;
             display: flex;
             align-items: center;
-            font-size: 1.2rem;
-            padding: 10px 20px;
+            font-size: 1.1rem;
+            padding: 8px 16px;
             border: 2px solid transparent;
             border-radius: 5px;
-            margin: 0 10px;
+            margin: 0 5px;
         }
         .nav-link.active {
             background-color: orange !important;
@@ -55,12 +55,12 @@
             color: orange !important;
         }
         .tab-content {
-            margin-top: 80px;
+            padding: 20px;
         }
         .tab-pane {
             text-align: center;
         }
-        /* トップキャッチのアニメーション */
+        /* トップキャッチ */
         .top-catch, .sub-catch {
             opacity: 0;
             transform: translateY(50px);
@@ -81,13 +81,29 @@
             padding: 10px;
             background-color: #333;
             color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            position: relative;
+            margin-top: 50px;
         }
         footer img {
             width: 10%;
             height: auto;
+        }
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .nav-tabs .nav-item:first-child img {
+                height: 50px;
+            }
+            .nav-link {
+                font-size: 1rem;
+                padding: 6px 10px;
+                margin: 0 2px;
+            }
+            body {
+                padding-top: 100px;
+            }
+            footer img {
+                width: 20%;
+            }
         }
     </style>
 </head>
