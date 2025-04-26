@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -26,7 +27,8 @@
             display: flex;
             justify-content: flex-start;
             margin-bottom: 0;
-            align-items: center; /* タブとアイコンの垂直位置を揃える */
+            align-items: flex-end; /* タブをタブゾーン内の下に揃える */
+            border-bottom: 2px solid #ddd; /* タブに枠線を追加 */
         }
         /* アイコンサイズを大きく */
         .nav-tabs .nav-item:first-child {
@@ -40,12 +42,16 @@
             color: gray !important; /* 未選択タブ文字をグレーに */
             display: flex;
             align-items: center;
-            font-size: 1.2rem; /* タブ文字を大きく */
+            font-size: 1.4rem; /* タブ文字を大きく */
+            padding: 10px 20px; /* パディングを調整 */
+            border: 2px solid transparent; /* 枠線を追加 */
+            border-radius: 5px; /* 角を丸く */
+            margin: 0 10px;
         }
         .nav-link.active {
             background-color: orange !important; /* 選択中タブ背景をオレンジ */
             color: white !important; /* 選択中タブ文字を白に */
-            border: none !important; /* 選択中タブの枠線を消す */
+            border: 2px solid orange !important; /* 選択中タブにオレンジの枠線 */
         }
         .nav-link:hover {
             color: orange !important; /* ホバー時オレンジ文字 */
