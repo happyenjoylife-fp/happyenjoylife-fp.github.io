@@ -54,13 +54,14 @@
 
         /* タブの基本スタイル（未選択時） */
         .nav-link {
-            color: gray;
+            color: gray !important; /* 文字色をグレーに固定 */
         }
 
-        /* 選択中のタブの色をオレンジに */
+        /* 選択中のタブの色をオレンジ背景に、文字を白に */
         .nav-link.active {
-            background-color: #f39c12;
-            color: white;
+            background-color: #f39c12 !important; /* オレンジ背景 */
+            color: white !important; /* 白文字 */
+            border: none; /* 余計な枠線を消す */
         }
 
         /* ホバー時のタブ色 */
@@ -71,6 +72,7 @@
         /* タブ内容を中央揃え */
         .tab-pane {
             text-align: center;
+            padding-top: 20px;
         }
 
         /* 見出しと説明文の中央揃え */
@@ -124,10 +126,7 @@
         </ul>
     </div>
 
-    <!-- ヘッダー（ロゴ画像） -->
-    <header>
-        <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true" alt="ヘッダー画像" style="width: 30%; height: auto;">
-    </header>
+    <!-- ヘッダー削除しました -->
 
     <!-- タブの内容 -->
     <div class="tab-content">
