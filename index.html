@@ -12,19 +12,41 @@
             padding: 0;
             background-color: #f4f4f4;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            margin-top: 80px; /* タブを固定するので、上にスペースを空ける */
+        /* タブ全体を固定 */
+        .nav-tabs-wrapper {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        section {
-            padding: 20px;
+        /* タブのスタイル */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+        .nav-link {
+            color: gray !important; /* 未選択タブ文字をグレーに */
+        }
+        .nav-link.active {
+            background-color: orange !important; /* 選択中タブ背景をオレンジ */
+            color: white !important; /* 選択中タブ文字を白に */
+            border: none !important; /* 選択中タブの枠線を消す */
+        }
+        .nav-link:hover {
+            color: orange !important; /* ホバー時オレンジ文字 */
+        }
+        /* タブ内容を中央寄せ */
+        .tab-pane {
+            text-align: center;
+            padding: 100px 20px 20px; /* 上にタブ分の余白を確保 */
         }
         h2 {
             color: #333;
         }
+        /* フッター */
         footer {
             text-align: center;
             padding: 10px;
@@ -34,78 +56,11 @@
             width: 100%;
             bottom: 0;
         }
-
-        /* タブ全体を固定する */
-        .nav-tabs-wrapper {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: white;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        /* タブを中央に配置 */
-        .nav-tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 0;
-        }
-
-        /* タブの基本スタイル（未選択時） */
-        .nav-link {
-            color: gray !important; /* 文字色をグレーに固定 */
-        }
-
-        /* 選択中のタブの色をオレンジ背景に、文字を白に */
-        .nav-link.active {
-            background-color: #f39c12 !important; /* オレンジ背景 */
-            color: white !important; /* 白文字 */
-            border: none; /* 余計な枠線を消す */
-        }
-
-        /* ホバー時のタブ色 */
-        .nav-link:hover {
-            color: #f39c12;
-        }
-
-        /* タブ内容を中央揃え */
-        .tab-pane {
-            text-align: center;
-            padding-top: 20px;
-        }
-
-        /* 見出しと説明文の中央揃え */
-        .home-header {
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .home-description {
-            text-align: left;
-            margin: 0 auto;
-            width: 80%;
-            padding-top: 20px;
-        }
-
-        /* サービスタブ内のリストを中央揃えに変更 */
-        #services ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            text-align: center;
-        }
-
-        #services ul li {
-            display: inline-block;
-            margin: 10px 20px;
-        }
-
     </style>
 </head>
 <body>
 
-    <!-- タブを固定するためにラップする -->
+    <!-- 固定タブ -->
     <div class="nav-tabs-wrapper">
         <ul class="nav nav-tabs">
             <li class="nav-item">
@@ -126,20 +81,13 @@
         </ul>
     </div>
 
-    <!-- ヘッダー削除しました -->
+    <!-- ヘッダー画像 削除しました -->
 
-    <!-- タブの内容 -->
+    <!-- タブの中身 -->
     <div class="tab-content">
         <div id="home" class="tab-pane fade show active">
-            <!-- 見出し -->
-            <div class="home-header">
-                <h2>みなさんの様々な不安や目標達成のために、最適なアドバイスをします。</h2>
-            </div>
-            
-            <!-- 追加の説明 -->
-            <div class="home-description">
-                <p>私の提供するサービスは、ただのアドバイスに留まらず、お客様と共にその目標に向けて実行可能なステップを組み立て、進捗を確認しながら実現へと向かっていきます。お客様が自分の未来に安心感を持ちながら、日々の生活をより豊かにするための経済的基盤を作り上げることです。どんな小さな不安でも、一緒に解決策を見つけていきます。</p>
-            </div>
+            <h2>みなさんの様々な不安や目標達成のために、最適なアドバイスをします。</h2>
+            <p>私の提供するサービスは、ただのアドバイスに留まらず、お客様と共にその目標に向けて実行可能なステップを組み立て、進捗を確認しながら実現へと向かっていきます。どんな小さな不安でも、一緒に解決策を見つけていきます。</p>
         </div>
         <div id="fp" class="tab-pane fade">
             <h2>FPとは</h2>
@@ -147,7 +95,7 @@
         </div>
         <div id="services" class="tab-pane fade">
             <h2>サービス</h2>
-            <ul>
+            <ul style="list-style: none; padding: 0;">
                 <li>ライフプランニングシミュレーションサービス</li>
                 <li>DC年金導入支援</li>
                 <li>金融教育業</li>
@@ -167,7 +115,7 @@
         <p>&copy; 2025 Happy Enjoy Life</p>
     </footer>
 
-    <!-- BootstrapのJavaScriptを追加 -->
+    <!-- BootstrapのJavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
