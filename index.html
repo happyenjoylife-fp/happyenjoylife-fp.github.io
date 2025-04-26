@@ -29,6 +29,8 @@
         }
         .nav-link {
             color: gray !important; /* 未選択タブ文字をグレーに */
+            display: flex;
+            align-items: center;
         }
         .nav-link.active {
             background-color: orange !important; /* 選択中タブ背景をオレンジ */
@@ -37,6 +39,12 @@
         }
         .nav-link:hover {
             color: orange !important; /* ホバー時オレンジ文字 */
+        }
+        /* アイコン画像のサイズ調整 */
+        .nav-link img {
+            width: 24px;
+            height: 24px;
+            margin-right: 8px; /* 画像とテキストの間にスペース */
         }
         /* タブ内容の余白調整 */
         .tab-content {
@@ -66,19 +74,29 @@
     <div class="nav-tabs-wrapper">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" href="#home">ホーム</a>
+                <a class="nav-link active" data-bs-toggle="tab" href="#home">
+                    <img src="https://via.placeholder.com/24" alt="アイコン">ホーム
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#fp">FPとは</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#fp">
+                    <img src="https://via.placeholder.com/24" alt="アイコン">FPとは
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#services">サービス</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#services">
+                    <img src="https://via.placeholder.com/24" alt="アイコン">サービス
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#profile">プロフィール</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#profile">
+                    <img src="https://via.placeholder.com/24" alt="アイコン">プロフィール
+                </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#contact">お問い合わせ</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#contact">
+                    <img src="https://via.placeholder.com/24" alt="アイコン">お問い合わせ
+                </a>
             </li>
         </ul>
     </div>
@@ -86,8 +104,8 @@
     <!-- タブの中身 -->
     <div class="tab-content">
         <div id="home" class="tab-pane fade show active">
-            <h2>みなさまの様々な不安や目標達成のために、最適なアドバイスをします。</h2>
-            <p>私の提供するサービスはただのアドバイスに留まらず、お客様と共にその目標に向けて実行可能なステップを組み立て、進捗を確認しながら実現へと向かっていきます。どんな小さな不安でも、一緒に解決策を見つけていきます。</p>
+            <h2>みなさんの様々な不安や目標達成のために、最適なアドバイスをします。</h2>
+            <p>私の提供するサービスは、ただのアドバイスに留まらず、お客様と共にその目標に向けて実行可能なステップを組み立て、進捗を確認しながら実現へと向かっていきます。どんな小さな不安でも、一緒に解決策を見つけていきます。</p>
         </div>
         <div id="fp" class="tab-pane fade">
             <h2>FPとは</h2>
