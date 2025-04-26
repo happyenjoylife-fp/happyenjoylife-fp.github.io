@@ -17,6 +17,7 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            margin-top: 80px; /* タブを固定するので、上にスペースを空ける */
         }
         section {
             padding: 20px;
@@ -34,22 +35,37 @@
             bottom: 0;
         }
 
+        /* タブ全体を固定する */
+        .nav-tabs-wrapper {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: white;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
         /* タブを中央に配置 */
         .nav-tabs {
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 0;
         }
 
-        /* 選択中のタブの色をオレンジに変更 */
+        /* タブの基本スタイル（未選択時） */
+        .nav-link {
+            color: gray;
+        }
+
+        /* 選択中のタブの色をオレンジに */
         .nav-link.active {
-            background-color: #f39c12; /* オレンジ色 */
+            background-color: #f39c12;
             color: white;
         }
 
         /* ホバー時のタブ色 */
         .nav-link:hover {
-            color: #f39c12; /* オレンジ色 */
+            color: #f39c12;
         }
 
         /* タブ内容を中央揃え */
@@ -87,24 +103,26 @@
 </head>
 <body>
 
-    <!-- タブをページ最上部に移動 -->
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link active" data-bs-toggle="tab" href="#home">ホーム</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#fp">FPとは</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#services">サービス</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#profile">プロフィール</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" href="#contact">お問い合わせ</a>
-        </li>
-    </ul>
+    <!-- タブを固定するためにラップする -->
+    <div class="nav-tabs-wrapper">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#home">ホーム</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#fp">FPとは</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#services">サービス</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#profile">プロフィール</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#contact">お問い合わせ</a>
+            </li>
+        </ul>
+    </div>
 
     <!-- ヘッダー（ロゴ画像） -->
     <header>
