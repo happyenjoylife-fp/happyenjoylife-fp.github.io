@@ -1,183 +1,198 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Enjoy Life</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding-top: 120px; /* タブ分の余白を確保 */
-            background-color: #f4f4f4;
-        }
-        /* タブ全体 */
-        .nav-tabs-wrapper {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: white;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            margin-bottom: 0;
-            align-items: flex-end;
-            border-bottom: 2px solid #ddd;
-        }
-        .nav-tabs .nav-item:first-child {
-            margin-right: 20px;
-        }
-        .nav-tabs .nav-item:first-child img {
-            height: 80px;
-            width: auto;
-        }
-        .nav-link {
-            color: gray !important;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            padding: 8px 16px;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            margin: 0 5px;
-        }
-        .nav-link.active {
-            background-color: orange !important;
-            color: white !important;
-            border: 2px solid orange !important;
-        }
-        .nav-link:hover {
-            color: orange !important;
-        }
-        .tab-content {
-            padding: 20px;
-        }
-        .tab-pane {
-            text-align: center;
-        }
-        /* トップキャッチ */
-        .top-catch, .sub-catch {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s forwards;
-        }
-        .sub-catch {
-            animation-delay: 1s;
-        }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* フッター */
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: relative;
-            margin-top: 50px;
-        }
-        footer img {
-            width: 10%;
-            height: auto;
-        }
-        /* スマホ対応 */
-        @media (max-width: 768px) {
-            .nav-tabs .nav-item:first-child img {
-                height: 50px;
-            }
-            .nav-link {
-                font-size: 1rem;
-                padding: 6px 10px;
-                margin: 0 2px;
-            }
-            body {
-                padding-top: 100px;
-            }
-            footer img {
-                width: 20%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>お問い合わせ | Happy Enjoy Life</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #fff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      border-bottom: 2px solid #ccc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+      margin-right: 20px;
+      object-fit: contain;
+    }
+
+    nav {
+      flex-grow: 1;
+    }
+
+    .tabs {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      margin-right: 5px;
+      border: 1px solid #ccc;
+      background-color: white;
+      color: gray;
+      text-decoration: none;
+      font-size: 18px;
+      border-bottom: none;
+      border-radius: 8px 8px 0 0;
+    }
+
+    .tab.active {
+      background-color: orange;
+      color: white;
+      font-weight: bold;
+    }
+
+    .contact-container {
+      padding: 30px 20px;
+      background-color: #fff;
+      max-width: 800px;
+      margin: 30px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .button-link {
+      display: inline-block;
+      background-color: #ff9900;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+
+    .button-link:hover {
+      background-color: #e68a00;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      max-width: 600px;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .submit-button {
+      background-color: #ff9900;
+      color: white;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background-color: #e68a00;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-top: 1px solid #ccc;
+    }
+
+    footer img {
+      width: 10%;
+      height: auto;
+    }
+
+    /* スマホ対応 */
+    @media (max-width: 600px) {
+      .tab {
+        font-size: 14px;
+        padding: 8px 12px;
+      }
+
+      header img {
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .contact-container {
+        margin: 20px 10px;
+      }
+
+      footer img {
+        width: 30%;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- 固定タブ -->
-    <div class="nav-tabs-wrapper">
-        <ul class="nav nav-tabs">
-            <!-- アイコン -->
-            <li class="nav-item">
-                <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo.jpg?raw=true" alt="アイコン">
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" href="#top">トップ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#fp">FPとは</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#services">サービス</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#profile">プロフィール</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#contact">お問い合わせ</a>
-            </li>
-        </ul>
+<header>
+  <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo.jpg?raw=true" alt="ロゴ">
+  <nav>
+    <div class="tabs">
+      <a href="index.html" class="tab">トップ</a>
+      <a href="services.html" class="tab">サービス</a>
+      <a href="profile.html" class="tab">プロフィール</a>
+      <a href="contact.html" class="tab active">お問い合わせ</a>
     </div>
+  </nav>
+</header>
 
-    <!-- タブ内容 -->
-    <div class="tab-content">
-        <div id="top" class="tab-pane fade show active">
-            <div class="top-catch">
-                <h1>お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
-            </div>
-            <div class="sub-catch mt-4">
-                <p>未来にどれだけのお金が必要か、今のままで大丈夫か。<br>
-                ライフプランニングシミュレーションを通じて、あなたの「今」と「未来」を具体的に書き出します。<br>
-                投資や保険も無理に進めず、中立な立場から、あなたに本当に必要なプランを一緒に考えます。</p>
-            </div>
-        </div>
-        <div id="fp" class="tab-pane fade">
-            <h2>FPとは</h2>
-            <p>FP（ファイナンシャル・プランナー）は、個人や家族のライフプランニングにおけるアドバイスを提供する専門家です。</p>
-        </div>
-        <div id="services" class="tab-pane fade">
-            <h2>サービス</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li>【ライフプランニングシミュレーション】</li>
-                <li>老後資金計画</li>
-                <li>教育資金計画</li>
-                <li>住宅購入資金計画</li>
-                <li>親の介護費用計画</li>
-            </ul>
-        </div>
-        <div id="profile" class="tab-pane fade">
-            <h2>プロフィール</h2>
-            <p>経歴や資格に関する情報をこちらに記載します。</p>
-        </div>
-        <div id="contact" class="tab-pane fade">
-            <h2>お問い合わせ</h2>
-            <p>公式LINEへのリンクはこちら。</p>
-            <a href="https://lin.ee/iTmuP3c" target="_blank">公式LINEはこちら</a>
-        </div>
-    </div>
+<main>
+  <div class="contact-container">
+    <h2 class="section-title">お問い合わせ</h2>
 
-    <footer>
-        <p>&copy; 2025 Happy Enjoy Life</p>
-        <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true" alt="ロゴ">
-    </footer>
+    <p>Zoom面談をご希望の方は、以下から日程調整をお願いいたします。</p>
+    <p><a href="https://timerex.net/s/happyenjoyfp_f1e2/63dec896" target="_blank" class="button-link">Zoom面談予約はこちら</a></p>
 
-    <!-- BootstrapのJavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <hr>
+
+    <p>お問い合わせフォームからもご連絡いただけます。</p>
+
+    <form action="https://formspree.io/f/mzzrzjzn" method="POST">
+      <label for="name">氏名</label><br>
+      <input type="text" id="name" name="name" required><br>
+
+      <label for="email">メールアドレス</label><br>
+      <input type="email" id="email" name="email" required><br>
+
+      <label for="message">お問い合わせ内容</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br>
+
+      <button type="submit" class="submit-button">送信する</button>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true" alt="フッター画像">
+</footer>
 
 </body>
 </html>
