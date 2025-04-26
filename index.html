@@ -1,58 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Enjoy Life</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding-top: 120px; /* タブ分の余白を確保 */
+            padding-top: 120px;
             background-color: #f4f4f4;
         }
-        /* タブ全体 */
         .nav-tabs-wrapper {
             position: fixed;
             top: 0;
             width: 100%;
             background-color: white;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         .nav-tabs {
             display: flex;
-            flex-wrap: wrap;
             justify-content: flex-start;
             margin-bottom: 0;
-            align-items: flex-end;
             border-bottom: 2px solid #ddd;
         }
-        .nav-tabs .nav-item:first-child {
+        .nav-item {
             margin-right: 20px;
-        }
-        .nav-tabs .nav-item:first-child img {
-            height: 80px;
-            width: auto;
         }
         .nav-link {
             color: gray !important;
-            display: flex;
-            align-items: center;
             font-size: 1.1rem;
             padding: 8px 16px;
             border: 2px solid transparent;
             border-radius: 5px;
-            margin: 0 5px;
         }
         .nav-link.active {
             background-color: orange !important;
             color: white !important;
-            border: 2px solid orange !important;
-        }
-        .nav-link:hover {
-            color: orange !important;
         }
         .tab-content {
             padding: 20px;
@@ -60,50 +46,15 @@
         .tab-pane {
             text-align: center;
         }
-        /* トップキャッチ */
-        .top-catch, .sub-catch {
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeInUp 1s forwards;
-        }
-        .sub-catch {
-            animation-delay: 1s;
-        }
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* フッター */
         footer {
             text-align: center;
             padding: 10px;
             background-color: #333;
             color: white;
-            position: relative;
-            margin-top: 50px;
         }
         footer img {
             width: 10%;
             height: auto;
-        }
-        /* スマホ対応 */
-        @media (max-width: 768px) {
-            .nav-tabs .nav-item:first-child img {
-                height: 50px;
-            }
-            .nav-link {
-                font-size: 1rem;
-                padding: 6px 10px;
-                margin: 0 2px;
-            }
-            body {
-                padding-top: 100px;
-            }
-            footer img {
-                width: 20%;
-            }
         }
     </style>
 </head>
@@ -112,10 +63,6 @@
     <!-- 固定タブ -->
     <div class="nav-tabs-wrapper">
         <ul class="nav nav-tabs">
-            <!-- アイコン -->
-            <li class="nav-item">
-                <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo.jpg?raw=true" alt="アイコン">
-            </li>
             <li class="nav-item">
                 <a class="nav-link active" data-bs-toggle="tab" href="#top">トップ</a>
             </li>
@@ -137,14 +84,7 @@
     <!-- タブ内容 -->
     <div class="tab-content">
         <div id="top" class="tab-pane fade show active">
-            <div class="top-catch">
-                <h1>お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
-            </div>
-            <div class="sub-catch mt-4">
-                <p>未来にどれだけのお金が必要か、今のままで大丈夫か。<br>
-                ライフプランニングシミュレーションを通じて、あなたの「今」と「未来」を具体的に書き出します。<br>
-                投資や保険も無理に進めず、中立な立場から、あなたに本当に必要なプランを一緒に考えます。</p>
-            </div>
+            <h1>お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
         </div>
         <div id="fp" class="tab-pane fade">
             <h2>FPとは</h2>
@@ -152,8 +92,8 @@
         </div>
         <div id="services" class="tab-pane fade">
             <h2>サービス</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li>【ライフプランニングシミュレーション】</li>
+            <ul>
+                <li>ライフプランニングシミュレーション</li>
                 <li>老後資金計画</li>
                 <li>教育資金計画</li>
                 <li>住宅購入資金計画</li>
@@ -194,7 +134,6 @@
         <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true" alt="ロゴ">
     </footer>
 
-    <!-- BootstrapのJavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
