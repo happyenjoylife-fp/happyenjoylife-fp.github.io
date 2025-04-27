@@ -9,10 +9,9 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding-top: 120px; /* タブ分の余白を確保 */
+            padding-top: 120px;
             background-color: #f4f4f4;
         }
-        /* タブ全体 */
         .nav-tabs-wrapper {
             position: fixed;
             top: 0;
@@ -61,7 +60,6 @@
         .tab-pane {
             text-align: center;
         }
-        /* トップキャッチ */
         .top-catch, .sub-catch {
             opacity: 0;
             transform: translateY(50px);
@@ -76,7 +74,6 @@
                 transform: translateY(0);
             }
         }
-        /* フッター */
         footer {
             text-align: center;
             padding: 10px;
@@ -89,7 +86,6 @@
             width: 10%;
             height: auto;
         }
-        /* スマホ対応 */
         @media (max-width: 768px) {
             .nav-tabs .nav-item:first-child img {
                 height: 50px;
@@ -106,7 +102,6 @@
                 width: 20%;
             }
         }
-        /* お問い合わせフォーム */
         .form-control {
             max-width: 400px;
             margin: 10px auto;
@@ -114,14 +109,17 @@
         .form-control-textarea {
             height: 120px;
         }
+        .timerex-widget {
+            max-width: 100%;
+            height: 400px;
+            margin: 20px auto;
+        }
     </style>
 </head>
 <body>
 
-    <!-- 固定タブ -->
     <div class="nav-tabs-wrapper">
         <ul class="nav nav-tabs">
-            <!-- アイコン -->
             <li class="nav-item">
                 <a href="#top"><img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo.jpg?raw=true" alt="アイコン"></a>
             </li>
@@ -143,7 +141,6 @@
         </ul>
     </div>
 
-    <!-- タブ内容 -->
     <div class="tab-content">
         <div id="top" class="tab-pane fade show active">
             <div class="top-catch">
@@ -174,29 +171,19 @@
             <p>経歴や資格に関する情報をこちらに記載します。</p>
         </div>
         <div id="contact" class="tab-pane fade">
-            <h2>お問い合わせ</h2>
-            
-            <!-- Zoom面談予約の埋め込みコード -->
-            <div class="mt-4">
-                <h3>Zoom面談予約</h3>
-                <!-- Begin TimeRex Widget -->
+            <h2>Zoom面談ご予約はこちら</h2>
+            <div class="timerex-widget">
                 <div id="timerex_calendar" data-url="https://timerex.net/s/happyenjoyfp_f1e2/63dec896"></div>
                 <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
                 <script type="text/javascript">
                     TimerexCalendar();
                 </script>
-                <!-- End TimeRex Widget -->
             </div>
-
-            <!-- 公式LINEの埋め込みコード -->
-            <div class="mt-4">
-                <h3>公式LINE</h3>
-                <a href="https://lin.ee/XzI1xRAl">
-                    <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
-                </a>
-            </div>
-
-            <!-- お問い合わせフォーム -->
+            <h3>公式LINEはこちら</h3>
+            <a href="https://lin.ee/XzI1xRAl">
+                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
+            </a>
+            <h3>お問い合わせフォーム</h3>
             <form action="https://formspree.io/f/mzzrzjzn" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">氏名</label>
@@ -220,7 +207,6 @@
         <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true" alt="ロゴ">
     </footer>
 
-    <!-- BootstrapのJavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
