@@ -60,6 +60,20 @@
         .tab-pane {
             text-align: center;
         }
+        .top-catch, .sub-catch {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+        .sub-catch {
+            animation-delay: 1s;
+        }
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         footer {
             text-align: center;
             padding: 10px;
@@ -129,7 +143,14 @@
 
     <div class="tab-content">
         <div id="top" class="tab-pane fade show active">
-            <h1>お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
+            <div class="top-catch">
+                <h1>お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
+            </div>
+            <div class="sub-catch mt-4">
+                <p>未来にどれだけのお金が必要か、今のままで大丈夫か。<br>
+                ライフプランニングシミュレーションを通じて、あなたの「今」と「未来」を具体的に書き出します。<br>
+                投資や保険も無理に進めず、中立な立場から、あなたに本当に必要なプランを一緒に考えます。</p>
+            </div>
         </div>
         <div id="fp" class="tab-pane fade">
             <h2>FPとは</h2>
@@ -151,14 +172,13 @@
         </div>
         <div id="contact" class="tab-pane fade">
             <h2>Zoom面談ご予約はこちら</h2>
-            <!-- Begin TimeRex Widget -->
-            <div id="timerex_calendar" data-url="https://timerex.net/s/happyenjoyfp_f1e2/63dec896"></div>
-            <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
-            <script type="text/javascript">
-                TimerexCalendar();
-            </script>
-            <!-- End TimeRex Widget -->
-            
+            <div class="timerex-widget">
+                <div id="timerex_calendar" data-url="https://timerex.net/s/happyenjoyfp_f1e2/63dec896"></div>
+                <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
+                <script type="text/javascript">
+                    TimerexCalendar();
+                </script>
+            </div>
             <h3>お問い合わせフォーム</h3>
             <form action="https://formspree.io/f/mzzrzjzn" method="POST">
                 <div class="mb-3">
@@ -175,7 +195,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary">送信</button>
             </form>
-
             <h3>公式LINEはこちら</h3>
             <a href="https://lin.ee/XzI1xRAl">
                 <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
