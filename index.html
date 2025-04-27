@@ -100,6 +100,20 @@
             height: 400px;
             margin: 20px auto;
         }
+        /* アニメーション用のスタイル */
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -129,10 +143,12 @@
 
     <div class="tab-content">
         <div id="top" class="tab-pane fade show active">
-            <h1>お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
-            <p>未来にどれだけのお金が必要か、今のままで大丈夫か。<br>
+            <h1 class="fade-in-up">お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
+            <h3 class="fade-in-up">
+                未来にどれだけのお金が必要か、今のままで大丈夫か。<br>
                 ライフプランニングシミュレーションを通じて、あなたの「今」と「未来」を具体的に書き出します。<br>
-                投資や保険も無理に進めず、中立な立場から、あなたに本当に必要なプランを一緒に考えます。</p>
+                投資や保険も無理に進めず、中立な立場から、あなたに本当に必要なプランを一緒に考えます。
+            </h3> <!-- サブキャッチ更新 -->
         </div>
         <div id="fp" class="tab-pane fade">
             <h2>FPとは</h2>
