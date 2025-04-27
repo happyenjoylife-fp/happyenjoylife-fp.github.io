@@ -101,12 +101,29 @@
             margin: 20px auto;
         }
        /* アニメーション用のスタイル */
-        .fade-in-up {
-            position: relative;
-            animation: fadeInUp 1s ease-out;
-            opacity: 0;
-            padding: 20px;
-            z-index: 1;
+      .fade-in-up {
+          animation: fadeInUp 1s ease-out;
+          opacity: 0;
+          position: relative; /* 必須: 親要素の位置を相対的に指定 */
+          padding: 20px;
+          z-index: 1; /* テキストが背景の上に表示されるようにする */
+          background-image: url('https://img.freepik.com/free-vector/hand-draw-orange-splash-watercolor-background_1035-28431.jpg?semt=ais_hybrid&w=740');
+          background-size: cover; /* 背景画像を要素全体に合わせて表示 */
+          background-position: center; /* 画像を中央に配置 */
+          background-repeat: no-repeat; /* 画像を繰り返し表示しない */
+          border-radius: 10px; /* 少し丸みをつける */
+          padding: 40px; /* 画像がテキストの周りにスペースを持つように調整 */
+      }
+        /* 擬似要素で絵具風のバックグラウンドを作成 */
+        .fade-in-up::before {
+            content: '';
+            position: absolute;top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.8) 0%, rgba(255, 69, 0, 0.5) 70%);
+            filter: blur(8px);
+            z-index: -1; /* 背景として配置 */
         }
         
         /* 擬似要素で絵具風のバックグラウンドを作成 */
