@@ -104,6 +104,10 @@
         .fade-in-up {
             animation: fadeInUp 1s ease-out;
         }
+        .fade-in-up-delay {
+            animation: fadeInUp 1s ease-out;
+            animation-delay: 0.5s; /* サブキャッチの遅延 */
+        }
         @keyframes fadeInUp {
             0% {
                 opacity: 0;
@@ -144,7 +148,7 @@
     <div class="tab-content">
         <div id="top" class="tab-pane fade show active">
             <h1 class="fade-in-up">お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
-            <h3 class="fade-in-up">
+            <h3 class="fade-in-up-delay">
                 未来にどれだけのお金が必要か、今のままで大丈夫か。<br>
                 ライフプランニングシミュレーションを通じて、あなたの「今」と「未来」を具体的に書き出します。<br>
                 投資や保険も無理に進めず、中立な立場から、あなたに本当に必要なプランを一緒に考えます。
