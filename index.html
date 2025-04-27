@@ -111,8 +111,11 @@
         }
         .timerex-widget {
             max-width: 100%;
-            height: 400px;
+            height: 300px;
             margin: 20px auto;
+        }
+        .timerex-widget small {
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -171,7 +174,17 @@
             <p>経歴や資格に関する情報をこちらに記載します。</p>
         </div>
         <div id="contact" class="tab-pane fade">
-            <h2>お問い合わせフォーム</h2>
+            <h2>お問い合わせ</h2>
+            <h3>Zoom面談ご予約</h3>
+            <div class="timerex-widget">
+                <small>以下のカレンダーからご希望の日時を選択してください。</small>
+                <div id="timerex_calendar" data-url="https://timerex.net/s/happyenjoyfp_f1e2/63dec896"></div>
+                <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
+                <script type="text/javascript">
+                    TimerexCalendar();
+                </script>
+            </div>
+            <h3>お問い合わせフォーム</h3>
             <form action="https://formspree.io/f/mzzrzjzn" method="POST">
                 <div class="mb-3">
                     <label for="name" class="form-label">氏名</label>
@@ -187,10 +200,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary">送信</button>
             </form>
-            <h3>公式LINEはこちら</h3>
-            <a href="https://lin.ee/XzI1xRAl">
-                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
-            </a>
         </div>
     </div>
 
