@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Enjoy Life</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -60,13 +60,6 @@
         .tab-pane {
             text-align: center;
         }
-        .form-control {
-            max-width: 400px;
-            margin: 10px auto;
-        }
-        .form-control-textarea {
-            height: 120px;
-        }
         footer {
             text-align: center;
             padding: 10px;
@@ -78,6 +71,34 @@
         footer img {
             width: 10%;
             height: auto;
+        }
+        @media (max-width: 768px) {
+            .nav-tabs .nav-item:first-child img {
+                height: 50px;
+            }
+            .nav-link {
+                font-size: 1rem;
+                padding: 6px 10px;
+                margin: 0 2px;
+            }
+            body {
+                padding-top: 100px;
+            }
+            footer img {
+                width: 20%;
+            }
+        }
+        .form-control {
+            max-width: 400px;
+            margin: 10px auto;
+        }
+        .form-control-textarea {
+            height: 120px;
+        }
+        .timerex-widget {
+            max-width: 100%;
+            height: 400px;
+            margin: 20px auto;
         }
     </style>
 </head>
@@ -107,21 +128,13 @@
     </div>
 
     <div class="tab-content">
-        <!-- トップ -->
         <div id="top" class="tab-pane fade show active">
             <h1>お金の不安も、人生設計も。<br>あなたと一緒に、未来を作る。</h1>
-            <p>未来にどれだけのお金が必要か、今のままで大丈夫か。<br>
-            ライフプランニングシミュレーションを通じて、あなたの「今」と「未来」を具体的に書き出します。<br>
-            投資や保険も無理に進めず、中立な立場から、あなたに本当に必要なプランを一緒に考えます。</p>
         </div>
-
-        <!-- FPとは -->
         <div id="fp" class="tab-pane fade">
             <h2>FPとは</h2>
             <p>FP（ファイナンシャル・プランナー）は、個人や家族のライフプランニングにおけるアドバイスを提供する専門家です。</p>
         </div>
-
-        <!-- サービス -->
         <div id="services" class="tab-pane fade">
             <h2>サービス</h2>
             <ul style="list-style: none; padding: 0;">
@@ -132,41 +145,41 @@
                 <li>親の介護費用計画</li>
             </ul>
         </div>
-
-        <!-- プロフィール -->
         <div id="profile" class="tab-pane fade">
             <h2>プロフィール</h2>
             <p>経歴や資格に関する情報をこちらに記載します。</p>
         </div>
-
-        <!-- お問い合わせ -->
         <div id="contact" class="tab-pane fade">
-            <!-- Zoom面談予約 -->
-            <div class="section">
-                <h3>Zoom面談ご予約</h3>
-                <div id="timerex_calendar" data-url="https://timerex.net/s/happyenjoyfp_f1e2/63dec896"></div>
-                <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
-                <script type="text/javascript">
-                    TimerexCalendar();
-                </script>
-            </div>
+            <h2>Zoom面談ご予約はこちら</h2>
+            <!-- Begin TimeRex Widget -->
+            <div id="timerex_calendar" data-url="https://timerex.net/s/happyenjoyfp_f1e2/63dec896"></div>
+            <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
+            <script type="text/javascript">
+                TimerexCalendar();
+            </script>
+            <!-- End TimeRex Widget -->
+            
+            <h3>お問い合わせフォーム</h3>
+            <form action="https://formspree.io/f/mzzrzjzn" method="POST">
+                <div class="mb-3">
+                    <label for="name" class="form-label">氏名</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">メールアドレス</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">お問い合わせ内容</label>
+                    <textarea class="form-control form-control-textarea" id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">送信</button>
+            </form>
 
-            <!-- お問い合わせフォーム -->
-            <div class="section">
-                <h3>お問い合わせフォーム</h3>
-                <form action="https://formspree.io/f/mzzrzjzn" method="POST">
-                    <input type="text" class="form-control" name="name" placeholder="氏名" required>
-                    <input type="email" class="form-control" name="email" placeholder="メールアドレス" required>
-                    <textarea class="form-control form-control-textarea" name="message" placeholder="お問い合わせ内容" required></textarea>
-                    <button type="submit" class="btn">送信</button>
-                </form>
-            </div>
-
-            <!-- 公式LINE -->
-            <div class="section">
-                <h3>公式LINE</h3>
-                <a href="https://lin.ee/XzI1xRAl" class="btn">LINEで問い合わせる</a>
-            </div>
+            <h3>公式LINEはこちら</h3>
+            <a href="https://lin.ee/XzI1xRAl">
+                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
+            </a>
         </div>
     </div>
 
