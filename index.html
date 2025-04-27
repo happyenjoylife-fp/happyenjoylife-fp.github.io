@@ -103,12 +103,14 @@
        /* アニメーション用のスタイル */
         .fade-in-up {
             animation: fadeInUp 1s ease-out;
+            animation-fill-mode: forwards; /* アニメーション後もスタイルを保持 */
             opacity: 0; /* 初期状態では透明 */
         }
 
         .fade-in-up-delay {
             animation: fadeInUp 1s ease-out;
             animation-delay: 0.5s; /* サブキャッチの遅延 */
+            animation-fill-mode: forwards; /* アニメーション後もスタイルを保持 */
             opacity: 0; /* 初期状態では透明 */
         }
 
