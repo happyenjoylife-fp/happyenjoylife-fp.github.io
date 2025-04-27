@@ -110,16 +110,12 @@
         }
         
         /* 擬似要素で絵具風のバックグラウンドを作成 */
-        .fade-in-up::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle, rgba(255, 165, 0, 0.8) 0%, rgba(255, 69, 0, 0.5) 70%); /* オレンジ色と赤色のグラデーション */
-            filter: blur(8px); /* ぼかし効果 */
-            z-index: -1; /* 背景に表示 */
+        .fade-in-up-delay {
+            animation: fadeInUp 1s ease-out;
+            animation-delay: 0.5s; 
+            animation-fill-mode: forwards;
+            opacity: 0;
+            font-size: 1.25rem; /* サブキャッチを大きく表示 */
         }
 
         @keyframes fadeInUp {
