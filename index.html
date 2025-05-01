@@ -1,198 +1,78 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Enjoy Life</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding-top: 120px;
             background-color: #f4f4f4;
         }
-        .nav-tabs-wrapper {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: white;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .nav-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: flex-start;
-            margin-bottom: 0;
-            align-items: flex-end;
-            border-bottom: 2px solid #ddd;
-        }
-        .nav-tabs .nav-item:first-child {
-            margin-right: 20px;
-        }
-        .nav-tabs .nav-item:first-child img {
-            height: 80px;
-            width: auto;
-            cursor: pointer;
-        }
-        .nav-link {
-            color: gray !important;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            padding: 8px 16px;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            margin: 0 5px;
-        }
-        .nav-link.active {
-            background-color: orange !important;
-            color: white !important;
-            border: 2px solid orange !important;
-        }
-        .nav-link:hover {
-            color: orange !important;
-        }
-        .tab-content {
-            padding: 20px;
-        }
-        .tab-pane {
-            text-align: center;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: relative;
-            margin-top: 50px;
-        }
-        footer img {
-            width: 10%;
-            height: auto;
-        }
-        @media (max-width: 768px) {
-            .nav-tabs .nav-item:first-child img {
-                height: 50px;
-            }
-            .nav-link {
-                font-size: 1rem;
-                padding: 6px 10px;
-                margin: 0 2px;
-            }
-            body {
-                padding-top: 100px;
-            }
-            footer img {
-                width: 20%;
-            }
-        }
-        .form-control {
-            max-width: 400px;
-            margin: 10px auto;
-        }
-        .form-control-textarea {
-            height: 120px;
-        }
-        .timerex-widget {
-            max-width: 100%;
-            height: 400px;
-            margin: 20px auto;
-        }
+    </style>
 </head>
 <body>
+    <header>
+        <!-- ナビゲーションバーなど -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">サイト名</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">サービス</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">プロフィール</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">お問い合わせ</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+    <!-- ここに他のコンテンツがある場合も-->
+        <section id="canva-embed">
+            <div style="position: relative; width: 100%; height: 0; padding-top: 34.9927%;
+                padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+                border-radius: 8px; will-change: transform;">
+                <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                    src="https://www.canva.com/design/DAGmLtskpK8/TdSGi6HxcsUOIq04uknlsg/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+                    
+                    </iframe>
+            </div>
+            <p>佃FPさんによる<a href="https://www.canva.com/design/DAGmLtskpK8/TdSGi6HxcsUOIq04uknlsg/watch?utm_content=DAGmLtskpK8&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">Wedding Announcement Website (Microsite) Wedding Announcement Website in Orange Red Green Young & Illustrated Style</a></p>
+        </section>
+    <!-- 他のコンテンツ -->
+</main>
 
-    <div class="nav-tabs-wrapper">
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a href="#top"><img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo.jpg?raw=true" alt="アイコン"></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="tab" href="#top">トップ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#fp">FPとは</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#services">サービス</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#profile">プロフィール</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#contact">お問い合わせ</a>
-            </li>
-        </ul>
-    </div>
-
-    <div class="tab-content">
-        <div style="position: relative; width: 100%; height: 0; padding-top: 34.9927%;
-        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
-        border-radius: 8px; will-change: transform;">
-        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
-        src="https://www.canva.com/design/DAGmLtskpK8/TdSGi6HxcsUOIq04uknlsg/watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
-    </iframe>
-</div>
-佃FPさんによる<a href="https://www.canva.com/design/DAGmLtskpK8/TdSGi6HxcsUOIq04uknlsg/watch?utm_content=DAGmLtskpK8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Wedding Announcement Website (Microsite) Wedding Announcement Website in Orange Red Green Young &amp; Illustrated Style</a>
-        <div id="fp" class="tab-pane fade">
-            <h2>FPとは</h2>
-            <p>FP（ファイナンシャル・プランナー）は、個人や家族のライフプランニングにおけるアドバイスを提供する専門家です。</p>
-        </div>
-        <div id="services" class="tab-pane fade">
-            <h2>サービス</h2>
-            <ul style="list-style: none; padding: 0;">
-                <li>【ライフプランニングシミュレーション】</li>
-                <li>老後資金計画</li>
-                <li>教育資金計画</li>
-                <li>住宅購入資金計画</li>
-                <li>親の介護費用計画</li>
+        <section id="about">
+            <h1>私たちのサービス</h1>
+            <p>ここにサービス内容や説明を追加します。</p>
+        </section>
+        <section id="services">
+            <h2>提供するサービス</h2>
+            <ul>
+                <li>ライフプランニング</li>
+                <li>投資アドバイス</li>
+                <li>保険相談</li>
             </ul>
-        </div>
-        <div id="profile" class="tab-pane fade">
-            <h2>プロフィール</h2>
-            <p>経歴や資格に関する情報をこちらに記載します。</p>
-        </div>
-        <div id="contact" class="tab-pane fade">
-            <h2>Zoom面談ご予約はこちら</h2>
-            <!-- Begin TimeRex Widget -->
-            <div id="timerex_calendar" data-url="https://timerex.net/s/happyenjoyfp_f1e2/63dec896"></div>
-            <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
-            <script type="text/javascript">
-                TimerexCalendar();
-            </script>
-            <!-- End TimeRex Widget -->
-            
-            <h3>お問い合わせフォーム</h3>
-            <form action="https://formspree.io/f/mzzrzjzn" method="POST">
-                <div class="mb-3">
-                    <label for="name" class="form-label">氏名</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">メールアドレス</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">お問い合わせ内容</label>
-                    <textarea class="form-control form-control-textarea" id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">送信</button>
-            </form>
-
-            <h3>公式LINEはこちら</h3>
-            <a href="https://lin.ee/XzI1xRAl">
-                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/ja.png" alt="友だち追加" height="36" border="0">
-            </a>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2025 Happy Enjoy Life</p>
-        <img src="https://github.com/happyenjoylife-fp/happyenjoylife-fp.github.io/blob/main/logo_tate.jpg?raw=true" alt="ロゴ">
+        <p>お問い合わせは<a href="happyenjoyfp@gmail.com">こちら</a>まで</p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
